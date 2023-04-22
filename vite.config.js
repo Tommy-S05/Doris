@@ -7,10 +7,11 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                // 'resources/css/static/connect.css',
                 'resources/stylus/static/connect.styl',
+                'resources/stylus/static/md_alert.styl',
                 'resources/js/static/app.js',
                 'resources/js/static/connect.js',
+                'resources/js/static/md_alert.js',
             ],
             refresh: true,
         }),

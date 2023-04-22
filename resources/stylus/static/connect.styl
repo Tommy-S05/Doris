@@ -1,8 +1,8 @@
 body, html
     font-family: 'Roboto', sans-serif;
     font-size 14px
-    margin 0px
-    padding 0px
+    margin 0
+    padding 0
 
 body
     background-color #f9f9f9
@@ -18,9 +18,9 @@ label
     margin-top 16px !important
 
 .shadow
-    box-shadow 1px 7px 16px 1px rgba(0, 0, 0, 0.12)
     -webkit-box-shadow 1px 7px 16px 1px rgba(0, 0, 0, 0.12)
     -moz-box-shadow 1px 7px 16px 1px rgba(0, 0, 0, 0.12)
+    box-shadow 1px 7px 16px 1px rgba(0, 0, 0, 0.12)
 
 .page
     align-items center
@@ -50,20 +50,34 @@ label
 
             img
                 display block
-                margin 0px auto
+                margin 0 auto
                 width 50%
 
         h2.title
             color #2c2c2c
             display block
             font-weight 500
-            margin 0px
-            padding 0px
+            margin 0
+            padding 0
             text-align center
             font-size 2em
             margin-top 16px
 
         .form
+            .actions
+                display block
+                overflow hidden
+                margin-top 6px
+                width 100%
+                a
+                    color #00b2ee
+                    display inline-block
+                    float right
+                    padding 4px
+                    text-decoration none
+                    &:hover
+                        color #0088b6
+
             .group
                 position relative
                 width 100%
@@ -93,6 +107,7 @@ label
 
             .btn
                 display block
+                cursor pointer
                 width 100%
                 font-weight 600
                 font-size 1.2em
@@ -112,7 +127,7 @@ label
 
     .box
         background-color transparent !important
-        border-bottom 0px !important
+        border-bottom 0 !important
         width 100% !important
 
         .logo
@@ -129,10 +144,10 @@ label
     .form
         .group
             input
-                border 0px !important
+                border 0 !important
 
                 &:focus
-                    border 0px !important
+                    border 0 !important
 
             i
                 top 11px !important
@@ -141,41 +156,41 @@ label
         .btn
             background-color #f7cd4c !important
             color #222 !important
-            border 0px !important
+            border 0 !important
 
 @-webkit-keyframes AnimationName {
     0% {
-        background-position: 0% 50%
+        background-position: 0 50%
     }
     50% {
         background-position: 100% 50%
     }
     100% {
-        background-position: 0% 50%
+        background-position: 0 50%
     }
 }
 
 @-moz-keyframes AnimationName {
     0% {
-        background-position: 0% 50%
+        background-position: 0 50%
     }
     50% {
         background-position: 100% 50%
     }
     100% {
-        background-position: 0% 50%
+        background-position: 0 50%
     }
 }
 
 @keyframes AnimationName {
     0% {
-        background-position: 0% 50%
+        background-position: 0 50%
     }
     50% {
         background-position: 100% 50%
     }
     100% {
-        background-position: 0% 50%
+        background-position: 0 50%
     }
 }
 

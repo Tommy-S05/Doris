@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConnectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('/login', [\App\Http\Controllers\ConnectController::class, 'login'])->name('login');
+Route::get('/login', [ConnectController::class, 'login'])->name('login');
+
+Route::prefix('/api-js')->group(function() {
+    //Connect Module
+    Route::post('/connect/login', [\App\Http\Controllers\ApiJS\ConnectController::class, 'postLogin']);
+});

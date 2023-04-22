@@ -1,0 +1,224 @@
+.blur {
+  filter: blur(2px);
+}
+.md_alert {
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  display: none;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.md_alert .scale_animation {
+  animation: scale 0.3s forwards;
+  transition: all 0.6s ease-in-out;
+}
+.md_alert .md_alert_inside {
+  background-color: #fff;
+  border-radius: 12px;
+  min-width: 220px;
+  width: 420px;
+}
+.md_alert .md_alert_inside .md_alert_content {
+  color: #333;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 24px;
+  width: 100%;
+}
+.md_alert .md_alert_inside .md_alert_content h2,
+.md_alert .md_alert_inside .md_alert_content h5 {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+.md_alert .md_alert_inside .md_alert_content h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+.md_alert .md_alert_inside .md_alert_content .icon {
+  display: block;
+  margin-top: 24px;
+  text-align: center;
+  width: 100%;
+}
+.md_alert .md_alert_inside .md_alert_content .icon img {
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+}
+.md_alert .md_alert_inside .md_alert_content ul {
+  margin: 0;
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+}
+.md_alert .md_alert_inside .md_alert_content ul li {
+  margin-bottom: 2px;
+}
+.md_alert .md_alert_inside .md_alert_content ul li i {
+  position: relative;
+  color: #f00;
+  margin-right: 4px;
+  top: 2px;
+}
+.md_alert .md_alert_inside .md_alert_footer {
+  display: block;
+  width: 100%;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_btn_close {
+  border-top: 1px solid #f0f0f0;
+  box-sizing: border-box;
+  color: #323742;
+  display: block;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  padding: 16px;
+  width: 100%;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_footer_other_btns {
+  margin-left: 7%;
+  width: 86%;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_footer_other_btns a.btn {
+  border: 0;
+  border-radius: 18px;
+  color: #fff;
+  -webkit-box-shadow: 2px 12px 12px 0 rgba(0,0,0,0.15);
+  -moz-box-shadow: 2px 12px 12px 0 rgba(0,0,0,0.15);
+  box-shadow: 2px 12px 12px 0 rgba(0,0,0,0.15);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_footer_other_btns a.btn-success {
+  background-color: #44bb5e;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_footer_other_btns a.btn-primary {
+  background-color: #0086d6;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_footer_other_btns a.btn-info {
+  background-color: #fb0;
+}
+.md_alert .md_alert_inside .md_alert_footer .md_alert_footer_other_btns a.btn-danger {
+  background-color: #f9461c;
+}
+.md_alert_animation_show {
+  animation-timing-function: ease-in-out;
+  animation: alert_show 0.5s forwards;
+}
+.md_alert_animation_hide {
+  animation-timing-function: ease-in-out;
+  animation: alert_hide 0.5s forwards;
+}
+@media only screen and (max-width: 480px) {
+  .md_alert .md_alert_inside {
+    width: 86% !important;
+  }
+}
+@-moz-keyframes alert_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes alert_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes alert_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes alert_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes alert_hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes alert_hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes alert_hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes alert_hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-o-keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

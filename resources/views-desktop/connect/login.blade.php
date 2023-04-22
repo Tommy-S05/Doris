@@ -18,37 +18,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     {{--    <link rel="stylesheet" href="{{ asset('/static/css/connect.css') }}">--}}
 
-    {{--    <script type="text/javascript" src="{{ asset('/static/js/app.js')}}"></script>--}}
-    {{--    <script type="text/javascript" src="{{ asset('/static/js/connect.js')}}"></script>--}}
-    @vite(['resources/stylus/static/connect.styl', 'resources/js/static/app.js', 'resources/js/static/connect.js',])
-    {{--    @vite(['resources/stylus/static/connect.styl'])--}}
+    <script src="{{ asset('/static/js/lang/'.config('doris.language').'.js')}}"></script>
+    @vite(['resources/stylus/static/connect.styl', 'resources/stylus/static/md_alert.styl'])
+    @vite(['resources/js/static/app.js', 'resources/js/static/connect.js'])
 </head>
 <body>
 @include('components.loader_action')
-<div class="page">
-    <div class="box">
-        <div class="logo">
-            <img src="{{ asset('static/images/doris-app-logo.png') }}" alt="">
-        </div>
-        <h2 class="title">{{ __('lg.connect.login') }}</h2>
-        <div class="form mtop16">
-            {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
-            <label for="email">{{ __('lg.connect.email') }}:</label>
-            <div class="group">
-                <i class="bi bi-envelope-open"></i>
-                {!! Form::email('email', null, ['class' => 'input', 'autofocus']) !!}
+@include('components.md_alert')
+<div class="wrapper">
+    <div class="page">
+        <div class="box">
+            <div class="logo">
+                <img src="{{ asset('static/images/doris-app-logo.png') }}" alt="">
             </div>
+            <h2 class="title">{{ __('lg.connect.login') }}</h2>
+            <div class="form mtop16">
+                {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
+                <label for="email">{{ __('lg.connect.email') }}:</label>
+                <div class="group">
+                    <i class="bi bi-envelope-open"></i>
+                    {!! Form::email('email', null, ['class' => 'input', 'autofocus']) !!}
+                </div>
 
-            <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
-            <div class="group">
-                <i class="bi bi-fingerprint"></i>
-                {!! Form::password('password', ['class' => 'input']) !!}
+                <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
+                <div class="group">
+                    <i class="bi bi-fingerprint"></i>
+                    {!! Form::password('password', ['class' => 'input', 'id' => 'input_password']) !!}
+                </div>
+                <div class="actions">
+                    <a href="#" class="show_password" data-state="hide" data-target="input_password">
+                        {{ __('lg.connect.show_password') }}
+                    </a>
+                </div>
+
+                {!! Form::submit(__('lg.connect.connect'), ['class' => 'btn mtop16 transition']) !!}
+                {!! Form::close() !!}
             </div>
-
-            {!! Form::submit(__('lg.connect.connect'), ['class' => 'btn mtop16 transition']) !!}
-            {!! Form::close() !!}
         </div>
     </div>
 </div>
+
+@vite(['resources/js/static/md_alert.js'])
 </body>
 </html>
