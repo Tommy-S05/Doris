@@ -19,7 +19,10 @@
     {{--    <link rel="stylesheet" href="{{ asset('/static/css/connect.css') }}">--}}
 
     @vite(['resources/stylus/static/connect.styl', 'resources/stylus/static/md_alert.styl'])
-    @vite(['resources/js/static/app.js', 'resources/js/static/connect.js'])
+    {{--    @vite(['resources/js/static/app.js', 'resources/js/static/connect.js'])--}}
+    <script type="module" src="{{ asset('/static/js/app.js')}}"></script>
+    <script type="module" src="{{ asset('/static/js/connect.js')}}"></script>
+    <script src="{{ asset('/static/js/lang/'.config('doris.language').'.js')}}"></script>
 </head>
 <body>
 @include('components.loader_action')
@@ -32,20 +35,22 @@
             </div>
             <h2 class="title">{{ __('lg.connect.login') }}</h2>
             <div class="form mtop16">
-                {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
+                {!! Form::open(['url' => '/', 'id' => 'form_connect_login', 'autocomplete' => 'off']) !!}
+                {!! Form::hidden('autocomplete', null, ['class' => 'autocomplete']) !!}
                 <label for="email">{{ __('lg.connect.email') }}:</label>
                 <div class="group">
                     <i class="bi bi-envelope-open"></i>
-                    {!! Form::email('email', null, ['class' => 'input', 'autofocus']) !!}
+                    {!! Form::email('email', null, ['class' => 'input disableac', 'autofocus']) !!}
                 </div>
 
                 <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
                 <div class="group">
                     <i class="bi bi-fingerprint"></i>
-                    {!! Form::password('password', ['class' => 'input', 'id' => 'input_password']) !!}
+                    {!! Form::password('password', ['class' => 'input disableac', 'id' => 'input_password']) !!}
                 </div>
                 <div class="actions">
-                    <a href="#" class="show_password" data-state="hide">
+                    <a href="#" id="show_password_login" class="show_password" data-state="hide"
+                       data-target="input_password">
                         {{ __('lg.connect.show_password') }}
                     </a>
                 </div>
@@ -57,6 +62,7 @@
     </div>
 </div>
 
-@vite(['resources/js/static/md_alert.js'])
+<script type="module" src="{{ asset('/static/js/md_alert.js')}}"></script>
+{{--@vite(['resources/js/static/md_alert.js'])--}}
 </body>
 </html>

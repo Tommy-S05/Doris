@@ -137,6 +137,9 @@ label {
 .page_app label {
   color: #fff !important;
 }
+.page_app .form .actions a {
+  color: #fff !important;
+}
 .page_app .form .group input {
   border: 0 !important;
 }

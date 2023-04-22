@@ -1,6 +1,6 @@
-export const base = location.protocol + '//' + location.host;
-export const route = document.getElementsByName('routeName')[0].getAttribute('content');
-export const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content');
+const base = location.protocol + '//' + location.host;
+const route = document.getElementsByName('routeName')[0].getAttribute('content');
+const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content');
 
 document.addEventListener('DOMContentLoaded', function () {
     let loader_action = document.getElementById('loader_action');
@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (state == 'hide') {
                     document.getElementById(target).setAttribute('type', 'text');
-                    this.innerHTML = lang['hide_password'];
+                    this.innerHTML = 'Ocultar Contraseña';
                     this.setAttribute('data-state', 'show');
                     console.log(state);
                 } else if (state == 'show') {
                     document.getElementById(target).setAttribute('type', 'password');
-                    this.innerHTML = lang['show_password'];
+                    this.innerHTML = 'Mostrar Contraseña';
                     this.setAttribute('data-state', 'hide');
                     console.log(state);
                 }
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-export function loader_action_status(status) {
+function loader_action_status(status) {
     if (status === 'show') {
         document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         loader_action.style.display = 'flex';
@@ -43,3 +43,5 @@ export function loader_action_status(status) {
         loader_action.classList.remove('loader_action_animation_show')
     }
 }
+
+export {base, route, csrfToken, loader_action_status};

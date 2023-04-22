@@ -1,5 +1,5 @@
 // import {base} from "@/static/app";
-import {base} from "./app";
+import {base} from "./app.js";
 
 document.addEventListener('DOMContentLoaded', function () {
     let md_alert_dom = document.getElementById('md_alert_dom');

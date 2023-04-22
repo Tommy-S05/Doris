@@ -9,11 +9,19 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/stylus/static/connect.styl',
                 'resources/stylus/static/md_alert.styl',
-                'resources/js/static/app.js',
-                'resources/js/static/connect.js',
-                'resources/js/static/md_alert.js',
+                // 'resources/js/static/app.js',
+                // 'resources/js/static/connect.js',
+                // 'resources/js/static/md_alert.js',
             ],
             refresh: true,
         }),
     ],
+    // optimizeDeps: {
+    //     include: [
+    //         'axios',
+    //         'resources/js/static/app.js',
+    //         'resources/js/static/connect.js',
+    //         'resources/js/static/md_alert.js',
+    //     ],
+    // },
 });
